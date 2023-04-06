@@ -21,7 +21,7 @@ export const login = (email, password) => async dispatch => {
     dispatch(loginStart());
     const user = await authAPI.login(email, password);
     dispatch(loginSuccess(user));
-  } catch (error) {
+  } catch (error: any) {
     dispatch(loginFailure(error.message));
   }
 };
